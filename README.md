@@ -17,3 +17,9 @@
 		- a single bug in any module can bring down the whole application
 		- it is very difficult to scale a single module. One has to scale the whole application
 		- continuous deployment is extremely difficult. Large monolithic applications are actually an obstacle to frequent deployments. In order to update one component, we have to redeploy the entire application.
+
+#4 what are micro services ?
+
+		- while monolith application works as a single component, a micro service architecture breaks it down to independent standalone small applications, each serving one particular requirement. Ex: 1 micro service for handling all vaccination centre operations, 1 for handling all the user base
+
+		- within this micro service architecture, the entire functionality is split in independent deployable module which communicate with each other through APIs ( RestFul web services)
