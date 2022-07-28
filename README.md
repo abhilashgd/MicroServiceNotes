@@ -173,6 +173,17 @@ $9 how does micro service communicate with each other ?
 			principle in Java OOps.
 			b) It becomes harder to change microservice without affecting the client. In reality, the client
 			doesn't need to know microservice and its implementation behind.
+			
+			a) With API gateway we can centralise common functionalities like authentication, logging,
+				and authorization. Now API will authenticate all requests hence each MS need not
+				implement the same. Thus reduces code redundancy.
+			b) Multiple Versions of Service : Our MS is updated with the new changes, but the updated
+				service is not compatible with the mobile client. Our mobile client will continue using
+				version-V1 while other clients will move to the version-V2. This can be done using API
+				Gateway Routing Technique
+				To address these issues, the architecture now contains another layer between the client and the
+				microservices. This is API Gateway. API Gateway acts like a proxy that routes the request to the
+				appropriate microservices and returns a response to the client. Microservices can also interact with each other through this Gateway.
 
 #15 What is API gateway in microservices?
 
