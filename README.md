@@ -194,6 +194,16 @@ $9 how does micro service communicate with each other ?
 			API Gateway can also aggregate the results from the microservices back to the client. API Gateway can also translate between web protocols like HTTP, web socket, etc.
 
 			API Gateway can provide every client with a custom API as well. 
+			
+			Different Implementations of API Gateways Available?
+				There are a number of API Gateways available and one can use any of these based on the needs.
+				a) Netflix API Gateway (Zuul)
+				b) Amazon API Gateway
+				c) Mulesoft
+				d) Kong API Gateway
+				e) Azure API Gateway
+				In Real world you will see most of the projects using Netflix API Gateway (Zuul), But we will be
+				implementing API Gateway using Spring Cloud Gateway. Why??
 
 #16 What is the CQRS pattern in microservice?
 
