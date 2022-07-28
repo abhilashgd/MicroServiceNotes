@@ -107,4 +107,12 @@ $9 how does micro service communicate with each other ?
 		- Real-time monitoring of the application should be possible.
 		- Deploy in containers
 		
+#12 Fault tolerence in Microservices Hystrix (Circuit Breaker)
+
+			- Fault can arise when a particular service is down
+			- Fault tolerance is the property that enables a system to continue operating properly in the event of failure of some its components
+
+#13 how to configure circuit breaker design pattern ?
+	
+			- whenever a micro service is down, stop calling that service and call a fallback method configured.
 
