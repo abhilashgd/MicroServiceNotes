@@ -116,8 +116,20 @@ $9 how does micro service communicate with each other ?
 	
 			- whenever a micro service is down, stop calling that service and call a fallback method configured.
 			
+			Step1: in pom.xml add dependency
+			
 			<dependency>‹groupId›org.springframework.cloud</groupId>
 			<artifactId›spring-cloud-starter-netflix-hystrix</artifactId>
 			<version>2.2.8.RELEASE</version>
 			</dependency>
-
+			
+			Step2: in the spring boot application class add
+				@EnableCircuitBreaker
+			Step3: in controller class the method which can break add
+			@HystrixCommand(fallbackMethod = "handleOtherMicroserviceDownTimme")
+			
+			Step4: create method handleOtherMicroserviceDownTimme()
+			{
+			handle the downtime scenario may by sending response of parent 
+			}
+				
