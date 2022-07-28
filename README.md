@@ -44,3 +44,26 @@
 		- once you have identified them, you need to create standalone projects, we are taking spring boot to create these micro services
 		- you need them to interact with each other through some ways, it can be rest API or messaging. We are going to use restful architecture for the same
 		- but just doing this does not make sure that you have implemented micro service architecture. These are till now just 2 Restful web services. You need load balancer, eureka service discovery (useful during load balancing and deployments) API gateways and many more
+		
+		Microservice1 -> Register -> Eureka
+		Microservice2 -> register -> eureka
+
+		Client/Browser -> eureka
+
+#7 Microservice aarchitecture ?
+
+	FE/Client -> Security and identity management -> API gateway -> microService1, Microservice2, etc
+	API gateway ->Service Discovery
+
+      	Security and identity management like OKTA - Spring Security
+	Service Discovery - server like eureka or Netflix
+$8 what are the main features of micro services?
+
+		- micro services architecture breaks an application into smaller services, and it is possible to develop, deploy each micro service independently. This makes the introduction of new features in an application very easier
+		- Decentralisation: Microservices architecture leads to distributed systems. The data management is decentralised. There will be a monolithic database containing all data belonging to the application. Each service has the ownership of the data related to the business functionality of that service
+		- Black Box: Every microservice is defined as black box. The details of the complexity are hidden from other services/components
+		- Security: The micro service platform itself should provide capabilities for certificate management. Different types of credentials, authentication and authorisation based on RBAC ( Role based access model). Security is decoupled from the micro service development team as platform standardisation help with it.
+		
+		
+		
+
