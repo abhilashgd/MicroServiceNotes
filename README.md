@@ -238,6 +238,8 @@ $9 how does micro service communicate with each other ?
 			With container technology, serverless architecture, IP addresses can be dynamically allocated to service instances. When address changes, consumer service can break and will need changes.
 
 			This issue can be solved by a service registry. Service registry will keep metadata of every producer service in the ecosystem. A service instance needs to register to the registry whenever it starts and should de-register when shutting down. Consumer service can query the Service registry every time it needs to find out the location of the service. This is called the Service Discovery pattern.						
+#19 SAGA Design pattern
 
+			Implement each business transaction that spans multiple services is a saga. A saga is a sequence of local transactions. Each local transaction updates the database and publishes a message or event to trigger the next local transaction in the saga. If a local transaction fails because it violates a business rule then the saga executes a series of compensating transactions that undo the changes that were made by the preceding local transactions.
 						
 						
