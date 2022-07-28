@@ -184,6 +184,17 @@ $9 how does micro service communicate with each other ?
 				To address these issues, the architecture now contains another layer between the client and the
 				microservices. This is API Gateway. API Gateway acts like a proxy that routes the request to the
 				appropriate microservices and returns a response to the client. Microservices can also interact with each other through this Gateway.
+				
+				Why Netflix Era came to an end and we all have to move on to Spring Cloud technologies?
+					Whenever if speak about MS, the first thing came to our mind was NETFLIX OSS support tools like
+					Eureka, Zuul, Hystrix etc. But recently we see that many of these are now in maintenance mode. This
+					means that there won't be any new features added to these modules, and the Spring Cloud team will
+					perform only some bug fixes and fix security issues. The maintenance mode does not include the
+					Eureka module, which is still supported.
+					
+					Hystrix has been already superseded by the new solution for telemetry called Atlas.
+					
+					The successor of Spring Cloud Netflix Zuul is Spring Cloud Gateway.
 
 #15 What is API gateway in microservices?
 
