@@ -140,5 +140,9 @@ $9 how does micro service communicate with each other ?
 			- hence comes our task: if it fails and circuit is open, configure a fallback method which will be executed as soon as circuit breaks or opens
 			- in this way, your vaccination centre service rest controller is wrapped with proxy class and monitor its calls. Everything is done internally handles everything for you
 
-
+			@HystrixCommand Elements
+				1. fallbackMethod : Specifies a method to process fallback logic
+				2. threadPoolKey : The thread-pool key is used to represent a Hystrix ThreadPool for monitoring,metrics publishing, caching and other such uses.
+				3. threadPoolProperties: Specifies thread pool properties.
+				4. groupKey: The command group key is used for grouping together commands such as for reporting, alerting, dashboards or team/library ownership
 				
