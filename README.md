@@ -185,7 +185,8 @@ $9 how does micro service communicate with each other ?
 				microservices. This is API Gateway. API Gateway acts like a proxy that routes the request to the
 				appropriate microservices and returns a response to the client. Microservices can also interact with each other through this Gateway.
 				
-				Why Netflix Era came to an end and we all have to move on to Spring Cloud technologies?
+**Why Netflix Era came to an end and we all have to move on to Spring Cloud technologies?**
+	
 					Whenever if speak about MS, the first thing came to our mind was NETFLIX OSS support tools like
 					Eureka, Zuul, Hystrix etc. But recently we see that many of these are now in maintenance mode. This
 					means that there won't be any new features added to these modules, and the Spring Cloud team will
@@ -195,6 +196,16 @@ $9 how does micro service communicate with each other ?
 					Hystrix has been already superseded by the new solution for telemetry called Atlas.
 					
 					The successor of Spring Cloud Netflix Zuul is Spring Cloud Gateway.
+					
+**Why Not Zuul? Why Spring Cloud Gateway.**
+
+			Zuul is a blocking API. A blocking gateway api makes use of as many threads as the number of
+			incoming requests. So this approach is more resource intensive. If no threads are available to process
+			incoming request then the request has to wait in queue.
+			Spring Cloud Gateway is a non blocking API. When using non blocking API, a thread is always
+			available to process the incoming request. These request are then processed synchronously in the
+			background and once completed the response is returned. So no incoming request never gets blocked
+			when using Spring Cloud Gateway.
 
 #15 What is API gateway in microservices?
 
