@@ -185,6 +185,12 @@ $9 how does micro service communicate with each other ?
 				microservices. This is API Gateway. API Gateway acts like a proxy that routes the request to the
 				appropriate microservices and returns a response to the client. Microservices can also interact with each other through this Gateway.
 				
+				@Bean
+				@LoadBalanced
+				public RestTemplate getRestTemplate0) {
+				return new RestTemplate();
+				}
+				
 **Why Netflix Era came to an end and we all have to move on to Spring Cloud technologies?**
 	
 					Whenever if speak about MS, the first thing came to our mind was NETFLIX OSS support tools like
