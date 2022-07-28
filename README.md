@@ -159,8 +159,53 @@ $9 how does micro service communicate with each other ?
 				Of course, there are solutions available that help make applications resilient and fault tolerant – one such framework is Hystrix circuit breaker.
 
 				The Hystrix circuit breaker framework library helps to control the interaction between services by providing fault tolerance and latency tolerance. It improves overall resilience of the system by isolating the failing services and stopping the cascading effect of failures.
+				
+#14 API Gateway - why do we need it ?
 
-						
-						
+			We had eureka server, hystrix implemented in Previous videos, Is that not enough ? Why do we
+			need API Gateway?
+			The reasons are many :
+			a) When we scale up our microservices, clients needs to know exactly which microservice they
+			need. Client/ FE Dont need such information that backend developer is developing which
+			microservice for which functionality. To over come this we have API Gateway to create an
+			abstraction layer between FE and Backend developers . Thus FE developers need not
+			depend on Backend people anymore. This is as good as implementing Abstraction
+			principle in Java OOps.
+			b) It becomes harder to change microservice without affecting the client. In reality, the client
+			doesn't need to know microservice and its implementation behind.
+
+#15 What is API gateway in microservices?
+
+			API Gateway in Microservices is a Microservices Architecture pattern.
+
+			API Gateway is a server and is a single-entry point into the system. API Gateway is responsible for routing the request, composition, and translation of the protocol. All the requests from the clients first come to the API Gateway and the API Gateway routes the request to the correct microservice.
+
+			API Gateway can also aggregate the results from the microservices back to the client. API Gateway can also translate between web protocols like HTTP, web socket, etc.
+
+			API Gateway can provide every client with a custom API as well. 
+
+#16 What is the CQRS pattern in microservice?
+
+			CQRS stands for Command Query Responsibility Segregator. Every microservice as per design will have a database per service model or shared database per service. As applications become more complex, the handling of detailed queries and validations also more complex. Traditional CRUD (Create, Read, Update and Delete) data model will become cumbersome to implement and maintain.
+
+			CQRS pattern proposes the separation of the read data model (Read) from the writing data model (Create, Update and Delete). The application will be segregated into Command and Query parts. The command part will be responsible for the Create, update, and delete operations. The query part will be responsible for the read operation through materialized views. This segregation provides scalability, ease of maintenance, and optimization of the database.
+
+#17 What is a circuit breaker pattern in Microservices?
+
+			Circuit Breaker is a microservice design pattern. In a microservices architecture, it is typical that a request could span multiple services. For any request, if one of the services involved in the response is not working, a circuit Breaker is used to stop the process of request and response.
+
+			Without a circuit breaker in place, the client would have continuously sent requests to the service which is down. Resources will get exhausted with low performance and a bad user experience due to this. To avoid this kind of problem, a circuit breaker pattern can be used. 
+
+			In the case of a circuit breaker pattern, the client will invoke a remote service via a proxy. This proxy will behave as a circuit barrier. In case of failure, when the number of failures crosses a defined threshold number, the circuit breaker will trip for a defined period. During this time, requests to invoke remote service will fail. Once the time-out period for the breaker is complete, a circuit breaker will allow a defined number of tests to pass through, and only when they succeed, a circuit breaker will resume back to normal operation and will start fulfilling the requests.
+
+
+#18 What is the Service Discovery pattern in microservices?
+
+			In the case of Microservices, issues for calling services need to be addressed.
+
+			With container technology, serverless architecture, IP addresses can be dynamically allocated to service instances. When address changes, consumer service can break and will need changes.
+
+			This issue can be solved by a service registry. Service registry will keep metadata of every producer service in the ecosystem. A service instance needs to register to the registry whenever it starts and should de-register when shutting down. Consumer service can query the Service registry every time it needs to find out the location of the service. This is called the Service Discovery pattern.						
+
 						
 						
