@@ -115,4 +115,9 @@ $9 how does micro service communicate with each other ?
 #13 how to configure circuit breaker design pattern ?
 	
 			- whenever a micro service is down, stop calling that service and call a fallback method configured.
+			
+			<dependency>‹groupId›org.springframework.cloud</groupId>
+			<artifactId›spring-cloud-starter-netflix-hystrix</artifactId>
+			<version>2.2.8.RELEASE</version>
+			</dependency>
 
