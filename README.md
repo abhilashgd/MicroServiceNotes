@@ -125,6 +125,7 @@ $9 how does micro service communicate with each other ?
 			
 			Step2: in the spring boot application class add
 				@EnableCircuitBreaker
+				
 			Step3: in controller class the method which can break add
 			@HystrixCommand(fallbackMethod = "handleOtherMicroserviceDownTimme")
 			
@@ -132,4 +133,12 @@ $9 how does micro service communicate with each other ?
 			{
 			handle the downtime scenario may by sending response of parent 
 			}
+			
+				Idea behind circuit breaker is 
+			- wrap your rest api call in circuit breaker object which monitors for failure
+			- once the failures reach a certain threshold, the circuit breaker trips, and all further calls to the circuit breaker return with an error
+			- hence comes our task: if it fails and circuit is open, configure a fallback method which will be executed as soon as circuit breaks or opens
+			- in this way, your vaccination centre service rest controller is wrapped with proxy class and monitor its calls. Everything is done internally handles everything for you
+
+
 				
