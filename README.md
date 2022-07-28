@@ -64,6 +64,47 @@ $8 what are the main features of micro services?
 		- Black Box: Every microservice is defined as black box. The details of the complexity are hidden from other services/components
 		- Security: The micro service platform itself should provide capabilities for certificate management. Different types of credentials, authentication and authorisation based on RBAC ( Role based access model). Security is decoupled from the micro service development team as platform standardisation help with it.
 		
+$9 how does micro service communicate with each other ?
+
+		- In the case of micro service architecture, there are 2 different types of inter-service communication. Between micro services
+
+		- synchronous communication
+		- asynchronous communication
+
+		Synchronous communication: 
+	
+		in the case of Synchronous communication between micro services, the client service waits for the response within a time limit. The possible solution is using http protocol using via REST API for inter service communication.
+
+		Asynchronous Communication:
 		
+		In case of Asynchronous communication, the client service doesnt wait for the response from another service. When the client micro service calls another micro service, the thread is not blocked until a response comes from the server.
+		The message producer service generates a message and sends the message to a message broker on a defined topic. The message producer waits for only the acknowledgement from the message broker to know that message is received by the broker.
+
+		The consuming service subscribes to a topic in the message queue. All the messages belonging to that topic will be fed to the consuming systems. The message producer service and consuming services don't even know each other. The response is received in the same methodology through a message broker via defined message topics.
+
+		Different messaging tools are based on the AMQP ( Advanced message Queuing Protocol). Some examples are given below
+
+		a. Apache Kafka
+		b. RabbitMQ
+		c. Apache ActiveMQ
+
+
+#10 what is the difference between monolithic, SOA and micro service architecture ?
+
+		- Monolithic architecture is similar to a big container wherein all the software components of an application are assembled together and tightly packaged
+		- A service-Oriented Architecture is a collection of services which communicate with each other. The communication can involve either simple data passing or it could involve two or more services co-ordinating some activity
+		- micro service architecture is an architectural style that structures an application as a collection of small autonomous services, modemed around a business domain
+		- main difference between SOA and MS architecture is based on sharing of data and info. SOA shares and reuses as much as possible while MS focuses on sharing as little as possible
+
+#11 how to design micro services?
+		
+		- A separate data store for each of the microservice.
+		- The application needs to be split into loosely coupled microservices based on business functionality.
+		- Decentralized framework.
+		- Polyglot architecture as per the business needs.
+		- Services to be designed, developed, deployed, and managed separately.
+		- Domain-driven design
+		- Real-time monitoring of the application should be possible.
+		- Deploy in containers
 		
 
