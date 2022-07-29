@@ -252,7 +252,26 @@ $9 how does micro service communicate with each other ?
 			specific factory. Here, you can modify requests and responses before or after sending the downstream
 			request.
 
-#16 What is the CQRS pattern in microservice?
+			CODE EXAMPLE:
+			
+			spring:
+			application:
+			name: API GATEWAY
+			cloud:
+			gateway:
+			routes:
+			id: CITIZEN-SERVICE
+			uri:
+			1b://CITIZEN-SERVICE
+			predicates:
+			- Path=/citizen/**
+			- id: VACCINATION-CENTER-SERVICE
+			uri:
+			lb://VACCINATION-CENTER-SERVICE
+			predicates:
+			Path=/vaccinationcenter/**
+			#16 What is the CQRS pattern in microservice?
+			
 
 			CQRS stands for Command Query Responsibility Segregator. Every microservice as per design will have a database per service model or shared database per service. As applications become more complex, the handling of detailed queries and validations also more complex. Traditional CRUD (Create, Read, Update and Delete) data model will become cumbersome to implement and maintain.
 
