@@ -232,6 +232,25 @@ $9 how does micro service communicate with each other ?
 				e) Azure API Gateway
 				In Real world you will see most of the projects using Netflix API Gateway (Zuul), But we will be
 				implementing API Gateway using Spring Cloud Gateway. Why??
+				
+**Getting Started with Spring Cloud Gateway.**
+
+			To include Spring Cloud Gateway in your project, use the starter with a group ID of
+			org.springframework.cloud and an artifact ID of spring-cloud-starter-gateway.
+			Also you need to make it eureka client
+			If you include the starter, but you do not want the gateway to be enabled, set
+			spring.cloud.gateway.enabled=false.			
+			
+**Terms and terminologies Spring Cloud Gateway**
+
+			Route: The basic building block of the gateway. It is defined by an ID, a destination URI, a collection
+			of predicates, and a collection of filters. A route is matched if the aggregate predicate is true.
+			Predicate: This is a Java 8 Function Predicate. The input type is a Spring Framework
+			Server WebExchange. This lets you match on anything from the HTTP request, such as headers or
+			parameters.
+			Filter: These are instances of Spring Framework GatewayFilter that have been constructed with a
+			specific factory. Here, you can modify requests and responses before or after sending the downstream
+			request.
 
 #16 What is the CQRS pattern in microservice?
 
